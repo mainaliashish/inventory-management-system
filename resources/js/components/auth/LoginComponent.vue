@@ -14,9 +14,12 @@
                     <div class="form-group">
                       <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp"
                         placeholder="Enter Email Address" v-model="form.email">
+                    <small class="text-danger" v-if="errors.email">{{ errors.email[0] }}</small>
                     </div>
                     <div class="form-group">
                       <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password" v-model="form.password">
+                      <small class="text-danger" v-if="errors.password">{{ errors.password[0] }}</small>
+                    
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small" style="line-height: 1.5rem;">
@@ -48,20 +51,40 @@
 
 <script type="text/javascript">
 export default {
+  created(){
+    if(User.loggedIn()){
+      this.$router.push({ name: 'home' })
+    }
+  },
   data(){
     return {
       form: {
         email: null,
         password: null
+      },
+      errors: {
+
       }
     }
   },
   methods: {
     handleLogin() {
-  
       axios.post('/api/auth/login', this.form)
-      .then(response => User.responseAfterLogin(response))
-      .catch(error => console.log(error.response.data))
+      .then(response => {
+        User.responseAfterLogin(response)
+        Toast.fire({
+          icon: 'success',
+          title: 'Signed in successfully'
+        })
+        this.$router.push({ name: 'home' })
+      })
+      .catch(error => this.errors = error.response.data.errors)
+      .catch(
+          Toast.fire({
+          icon: 'warning',
+          title: 'Invalid email or password'
+        })
+      )
     }
   },
 }

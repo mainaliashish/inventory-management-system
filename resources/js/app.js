@@ -13,11 +13,37 @@ import { routes } from './routes';
 import User from './Helpers/User';
 window.User = User;
 
+/*
+* Integrate Noty for notifications
+*/
+import Notification from './Helpers/Notification';
+window.Notification = Notification;
+
+/*
+* Integrate Swee Alert
+*/
+import Swal from 'sweetalert2'
+window.Swal = Swal;
+
+const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: toast => {
+        toast.addEventListener("mouseenter", Swal.stopTimer);
+        toast.addEventListener("mouseleave", Swal.resumeTimer);
+    }
+});
+
+window.Toast = Toast;
+
 
 const router = new VueRouter({
-  routes,
-//   mode: 'history'
-})
+    mode: 'history',
+    routes
+});
 
 
 const app = new Vue({

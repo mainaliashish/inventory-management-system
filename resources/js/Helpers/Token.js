@@ -5,7 +5,7 @@ class Token {
         if(payload) {
             return (payload.iss =
                 "http://inventory.test/#/api/auth/login" ||
-                "http://inventory.test/#/api/auth/signup" ? true : false);
+                "http://inventory.test/#/api/auth/register" ? true : false);
         }
         return false
     }
