@@ -10,6 +10,20 @@ let addEmployee = require('./components/employee/createEmployeeComponent.vue').d
 let employees = require('./components/employee/indexComponent.vue').default;
 let editEmployee = require('./components/employee/editEmployeeComponent.vue').default;
 
+
+let addSupplier = require("./components/supplier/createSupplierComponent.vue")
+    .default;
+let suppliers = require("./components/supplier/indexComponent.vue").default;
+let editSupplier = require("./components/supplier/editSupplierComponent.vue")
+    .default;
+
+let addCategory = require("./components/category/createCategoryComponent.vue")
+    .default;
+let categories = require("./components/category/indexComponent.vue").default;
+let editCategory = require("./components/category/editCategoryComponent.vue")
+    .default;
+
+
 export const routes = [
            { path: "/", component: login, name: "/" },
            { path: "/register", component: register, name: "register" },
@@ -42,6 +56,35 @@ export const routes = [
                path: "/employee/edit/:id",
                component: editEmployee,
                name: "edit-employee"
+           },
+           {
+               path: "/supplier/add",
+               component: addSupplier,
+               name: "add-supplier"
+           },
+           {
+               path: "/suppliers",
+               component: suppliers,
+               name: "suppliers"
+           },
+           {
+               path: "/supplier/edit/:id",
+               component: editSupplier,
+               name: "edit-supplier"
+           },
+           {
+               path: "/category/add",
+               component: addCategory,
+               name: "add-category"
+           },
+           {
+               path: "/categories",
+               component: categories,
+               name: "categories"
+           },
+           {
+               path: "/category/edit/:id",
+               component: editCategory,
+               name: "edit-category"
            }
-
        ];

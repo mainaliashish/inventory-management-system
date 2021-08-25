@@ -61,11 +61,27 @@
                     <div id="collapseForm" class="collapse" aria-labelledby="headingForm"
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <router-link class="collapse-item" to="">Add Supplier</router-link>
-                            <router-link class="collapse-item" to="">All Suppliers</router-link>
+                            <router-link class="collapse-item" to="/supplier/add">Add Supplier</router-link>
+                            <router-link class="collapse-item" to="/suppliers">All Suppliers</router-link>
                         </div>
                     </div>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFormCategory"
+                        aria-expanded="true" aria-controls="collapseFormCategory">
+                        <i class="fab fa-fw fa-wpforms"></i>
+                        <span>Categories</span>
+                    </a>
+                    <div id="collapseFormCategory" class="collapse" aria-labelledby="headingForm"
+                        data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <router-link class="collapse-item" to="/category/add">Add Category</router-link>
+                            <router-link class="collapse-item" to="/categories">All Category</router-link>
+                        </div>
+                    </div>
+                </li>
+
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable"
                         aria-expanded="true" aria-controls="collapseTable">
