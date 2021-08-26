@@ -82,6 +82,22 @@
                     </div>
                 </li>
 
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFormProduct"
+                        aria-expanded="true" aria-controls="collapseFormProduct">
+                        <i class="fab fa-fw fa-wpforms"></i>
+                        <span>Products</span>
+                    </a>
+                    <div id="collapseFormProduct" class="collapse" aria-labelledby="headingForm"
+                        data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <router-link class="collapse-item" to="/product/add">Add Product</router-link>
+                            <router-link class="collapse-item" to="/products">All Products</router-link>
+                        </div>
+                    </div>
+                </li>
+
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable"
                         aria-expanded="true" aria-controls="collapseTable">
@@ -343,6 +359,19 @@
                     </div>
                     <!---Container Fluid-->
                 </div>
+                      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>copyright &copy; <script>
+                document.write(new Date().getFullYear());
+              </script> - developed by
+              <b><a href="https://indrijunanda.gitlab.io/" target="_blank">Ashish Mainali</a></b>
+            </span>
+          </div>
+        </div>
+      </footer>
+      <!-- Footer -->
             </div>
         </div>
     </div>
