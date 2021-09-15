@@ -185,4 +185,15 @@ class ProductController extends Controller
 
         return response()->json(['status' => 'Success']);
     }
+
+    public function updateStock(Request $request, $id)
+    {
+        $data = array();
+        $data['product_quantity'] = $request->product_quantity;
+        DB::table('products')->where('id', $id)->update($data);
+        
+    }
+
+
+
 }

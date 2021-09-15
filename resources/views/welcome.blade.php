@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="{{ asset('backend/img/logo/logo.png') }}" rel="icon">
-    <title>RuangAdmin - Dashboard</title>
+    <title>Inventory Management System- Dashboard</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link href="{{ asset('backend/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('backend/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
@@ -26,7 +26,7 @@
                     <div class="sidebar-brand-icon">
                         <img src="backend/img/logo/logo2.png">
                     </div>
-                    <div class="sidebar-brand-text mx-3">RuangAdmin</div>
+                    <div class="sidebar-brand-text mx-3">Ashish Mainali</div>
                 </a>
                 <hr class="sidebar-divider my-0">
                 <li class="nav-item active">
@@ -34,6 +34,12 @@
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Dashboard</span></router-link>
                 </li>
+                 <li class="nav-item">
+                     <router-link class="nav-link" to="/pos">
+                         <i class="fas fa-fw fa-tachometer-alt"></i>
+                         <span>POS</span></router-link>
+                 </li>
+
                 <hr class="sidebar-divider">
                 <div class="sidebar-heading">
                     Features
@@ -99,20 +105,69 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable"
-                        aria-expanded="true" aria-controls="collapseTable">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>Tables</span>
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseExpense"
+                        aria-expanded="true" aria-controls="collapseExpense">
+                        <i class="fab fa-fw fa-wpforms"></i>
+                        <span>Expenses</span>
                     </a>
-                    <div id="collapseTable" class="collapse" aria-labelledby="headingTable"
+                    <div id="collapseExpense" class="collapse" aria-labelledby="headingForm"
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Tables</h6>
-                            <a class="collapse-item" href="simple-tables.html">Simple Tables</a>
-                            <a class="collapse-item" href="datatables.html">DataTables</a>
+                            <router-link class="collapse-item" to="/expense/add">Add Expense</router-link>
+                            <router-link class="collapse-item" to="/expenses">All Expenses</router-link>
                         </div>
                     </div>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCustomer" aria-expanded="true" aria-controls="collapseCustomer">
+                        <i class="fab fa-fw fa-wpforms"></i>
+                        <span>Customers</span>
+                    </a>
+                    <div id="collapseCustomer" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <router-link class="collapse-item" to="/customer/add">Add Customer</router-link>
+                            <router-link class="collapse-item" to="/customers">All Customers</router-link>
+                        </div>
+                    </div>
+                </li>
+
+
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSalary" aria-expanded="true" aria-controls="collapseSalary">
+                        <i class="fab fa-fw fa-wpforms"></i>
+                        <span>Salaries</span>
+                    </a>
+                    <div id="collapseSalary" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            {{-- <router-link class="collapse-item" to="/salary/add">Add Salary</router-link> --}}
+                            <router-link class="collapse-item" to="/salary-pay">Pay Salary</router-link>
+                            <router-link class="collapse-item" to="/salaries">All Salary</router-link>
+
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <router-link class="nav-link" to="/stock">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Stock</span>
+                    </router-link>
+                </li>
+              <li class="nav-item">
+                  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReport" aria-expanded="true" aria-controls="collapseReport">
+                      <i class="fab fa-fw fa-wpforms"></i>
+                      <span>Reports</span>
+                  </a>
+                  <div id="collapseReport" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+                      <div class="bg-white py-2 collapse-inner rounded">
+                          <router-link class="collapse-item" to="/">Report one</router-link>
+                          <router-link class="collapse-item" to="/">Reports two</router-link>
+                      </div>
+                    </div>
+              </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="ui-colors.html">
                         <i class="fas fa-fw fa-palette"></i>
@@ -363,9 +418,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>copyright &copy; <script>
-                document.write(new Date().getFullYear());
-              </script> - developed by
+            <span>copyright &copy; 
               <b><a href="https://indrijunanda.gitlab.io/" target="_blank">Ashish Mainali</a></b>
             </span>
           </div>

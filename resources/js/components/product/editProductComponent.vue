@@ -12,7 +12,7 @@
               <div class="col-lg-12">
                 <div class="login-form">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Add Product</h1>
+                    <h1 class="h4 text-gray-900 mb-4">Update Product</h1>
                   </div>
                   <form class="user" @submit.prevent="handleProductUpdate" enctype="multipart/form-data">
                    

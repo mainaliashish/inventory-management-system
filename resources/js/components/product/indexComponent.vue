@@ -70,7 +70,7 @@ export default {
   computed: {
     filterSearch() {
       return this.products.filter(product => {
-        return product.name.match(this.searchTerm)
+        return product.product_name.match(this.searchTerm)
       })
     }
   },

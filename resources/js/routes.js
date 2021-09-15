@@ -31,6 +31,31 @@ let editProduct = require("./components/product/editProductComponent.vue")
     .default;
 
 
+let addExpense = require("./components/expense/createExpenseComponent.vue")
+    .default;
+let expenses = require("./components/expense/indexComponent.vue").default;
+let editExpense = require("./components/expense/editExpenseComponent.vue")
+    .default;
+
+let paySalary = require("./components/salary/allEmployeeComponent.vue").default;
+let giveSalary = require("./components/salary/createSalaryComponent.vue").default
+let salaries = require("./components/salary/indexComponent.vue").default;
+let editSalary = require("./components/salary/editSalaryComponent.vue")
+    .default;
+let viewSalary = require("./components/salary/viewSalaryComponent.vue").default;
+
+let stock = require("./components/product/stockComponent.vue").default;
+let editStock = require("./components/product/editStockComponent.vue").default;
+
+
+let addCustomer = require("./components/customer/createCustomerComponent.vue")
+    .default;
+let customers = require("./components/customer/indexComponent.vue").default;
+let editCustomer = require("./components/customer/editCustomerComponent.vue")
+    .default;
+
+let pos = require("./components/pos/pointofsaleComponent.vue").default;
+
 
 export const routes = [
            { path: "/", component: login, name: "/" },
@@ -109,5 +134,76 @@ export const routes = [
                path: "/product/edit/:id",
                component: editProduct,
                name: "edit-product"
+           },
+           {
+               path: "/expense/add",
+               component: addExpense,
+               name: "add-expense"
+           },
+           {
+               path: "/expenses",
+               component: expenses,
+               name: "expenses"
+           },
+           {
+               path: "/expense/edit/:id",
+               component: editExpense,
+               name: "edit-expense"
+           },
+           {
+               path: "/salary/give/:id",
+               component: giveSalary,
+               name: "give-salary"
+           },
+           {
+               path: "/salary-pay",
+               component: paySalary,
+               name: "salary-pay"
+           },
+           {
+               path: "/salaries",
+               component: salaries,
+               name: "salaries"
+           },
+           {
+               path: "/salary/view/:id",
+               component: viewSalary,
+               name: "view-salary"
+           },
+           {
+               path: "/salary/edit/:id",
+               component: editSalary,
+               name: "edit-salary"
+           },
+           {
+               path: "/stock",
+               component: stock,
+               name: "stock"
+           },
+           {
+               path: "/stock/edit/:id",
+               component: editStock,
+               name: "edit-stock"
+           },
+           ,
+           {
+               path: "/customer/add",
+               component: addCustomer,
+               name: "add-customer"
+           },
+           {
+               path: "/customers",
+               component: customers,
+               name: "customers"
+           },
+           {
+               path: "/customer/edit/:id",
+               component: editCustomer,
+               name: "edit-customer"
+           },
+           {
+               path: "/pos",
+               component: pos,
+               name: "pos"
            }
        ];
