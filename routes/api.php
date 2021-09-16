@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Api\PosController;
+use App\Http\Controllers\Api\CartController;
 use App\Http\Controllers\Api\SalaryController;
 use App\Http\Controllers\Api\ExpenseController;
 use App\Http\Controllers\Api\ProductController;
@@ -30,3 +31,10 @@ Route::get('/edit-salary/{id}', [SalaryController::class, 'editSalary'])->name('
 Route::put('/update-salary/{id}', [SalaryController::class, 'updateSalary'])->name('salary.update');
 Route::put('/stock/update/{id}', [ProductController::class, 'updateStock'])->name('stock.update');
 Route::get('/get/subproduct/{id}', [PosController::class, 'getProduct'])->name('product.get');
+Route::post('/addToCart/{id}', [CartController::class, 'addToCart'])->name('cart.add');
+Route::get('/cart/products', [CartController::class, 'cartProducts'])->name('cart.products');
+Route::delete('/cart/delete/{id}', [CartController::class, 'removeCart'])->name('cart.remove');
+Route::get('/cart/increment/{id}', [CartController::class, 'incrementCart'])->name('cart.increment');
+Route::get('/cart/decrement/{id}', [CartController::class, 'decrementCart'])->name('cart.decrement');
+Route::get('/vats', [CartController::class, 'getVat'])->name('vats.get');
+Route::post('/process/order', [PosController::class, 'processOrder'])->name('order.process');

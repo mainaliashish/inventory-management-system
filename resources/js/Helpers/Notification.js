@@ -44,6 +44,42 @@ class Notification {
             timeout: 2000
         }).show();
     }
+    cart_success() {
+        new Noty({
+            // theme: "sunset",
+            type: "success",
+            layout: "topRight",
+            text: "Successfully added to Cart.",
+            timeout: 1000
+        }).show();
+    }
+    cart_delete() {
+        new Noty({
+            // theme: "sunset",
+            type: "success",
+            layout: "topRight",
+            text: "Successfully deleted from Cart.",
+            timeout: 1000
+        }).show();
+    }
+    cart_increment() {
+        new Noty({
+            // theme: "sunset",
+            type: "success",
+            layout: "topRight",
+            text: "Successfully added to Cart.",
+            timeout: 1000
+        }).show();
+    }
+    cart_decrement() {
+        new Noty({
+            // theme: "sunset",
+            type: "success",
+            layout: "topRight",
+            text: "Successfully deleted from Cart.",
+            timeout: 1000
+        }).show();
+    }
 }
 
 export default Notification = new Notification();
